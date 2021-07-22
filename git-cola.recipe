@@ -1,0 +1,5 @@
+{
+    "install": [
+        "disney-scripts/build.sh '%(DESTDIR)s' '%(prefix)s'"
+    ]
+}
