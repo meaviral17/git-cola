@@ -117,6 +117,13 @@ install_args += --prefix="$(prefix)"
 install_args += --force
 install_args += --install-scripts="$(bindir)"
 install_args += --record=build/MANIFEST
+
+ifdef PYTHON_SITE_PACKAGES
+    install_args += --install-lib=$(prefix)/$(PYTHON_SITE_PACKAGES)
+    install_args += --install-platlib=$(prefix)/$(PYTHON_SITE_PACKAGES)
+    install_args += --install-purelib=$(prefix)/$(PYTHON_SITE_PACKAGES)
+endif
+
 ifdef DESTDIR
     install_args += --root="$(DESTDIR)"
     export DESTDIR
